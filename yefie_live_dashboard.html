@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yefie Live — Stream Chat Hub</title>
+<style>
+:root{--bg:#090911;--panel:#121220;--panel2:#19192a;--line:#292943;--text:#f5f4ff;--muted:#a3a2bb;--purple:#9b5cff;--pink:#ef5bd5;--green:#42d69a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 15% 0%,#24113f 0,transparent 38%),radial-gradient(ellipse at 100% 10%,#201039 0,transparent 32%),var(--bg);color:var(--text);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+button,input{font:inherit}.app{max-width:1450px;margin:auto;padding:26px}.top{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:24px}.brand{display:flex;align-items:center;gap:13px}.logo{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,var(--purple),var(--pink));display:grid;place-items:center;font-weight:900;font-size:19px;box-shadow:0 0 28px #9b5cff55}.brand h1{font-size:22px;margin:0}.brand p{margin:2px 0 0;color:var(--muted);font-size:13px}.top-right{display:flex;gap:10px;align-items:center}.pill{border:1px solid var(--line);background:#151525;padding:8px 12px;border-radius:99px;color:var(--muted);font-size:12px}.demo{color:#ffd78b;border-color:#76572c}.layout{display:grid;grid-template-columns:270px minmax(0,1fr) 290px;gap:18px}.card{background:linear-gradient(180deg,#171727ee,#10101cee);border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 40px #0003}.side{padding:19px}.section-label{font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:#8887a4;font-weight:800;margin:2px 0 13px}.profile{display:flex;align-items:center;gap:12px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:19px}.avatar{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,#5732a7,#d14eaf);display:grid;place-items:center;font-size:20px;font-weight:800}.profile strong{display:block}.profile small{color:var(--muted)}.platform{display:flex;align-items:center;justify-content:space-between;padding:12px;border:1px solid var(--line);border-radius:13px;margin:9px 0;background:#ffffff04}.platform-left{display:flex;align-items:center;gap:10px}.picon{width:31px;height:31px;border-radius:10px;display:grid;place-items:center;font-size:12px;font-weight:900}.tw{background:#7044c8}.ki{background:#36a979}.yt{background:#c73545}.tt{background:#282833}.platform b{font-size:13px}.platform small{display:block;color:var(--muted);font-size:11px}.status{font-size:10px;color:#f0c77b}.status.ready{color:var(--green)}.btn{border:1px solid #55417a;background:#281b3c;color:#e9dcff;border-radius:11px;padding:9px 12px;cursor:pointer;font-weight:700}.btn:hover{filter:brightness(1.2)}.btn.primary{background:linear-gradient(100deg,#7844c8,#a447b9);border:0;color:white}.full{width:100%;margin-top:12px}.main{display:flex;flex-direction:column;gap:16px;min-width:0}.welcome{padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:15px;background:linear-gradient(110deg,#24153b,#171728 60%,#21152e)}.welcome h2{font-size:23px;margin:0 0 5px}.welcome p{margin:0;color:var(--muted)}.live-indicator{display:flex;align-items:center;gap:8px;color:#ff7d9b;font-size:12px;font-weight:800;letter-spacing:.8px}.dot{width:8px;height:8px;border-radius:50%;background:#ff557d;box-shadow:0 0 12px #ff557d}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:16px 18px}.stat span{color:var(--muted);font-size:12px}.stat strong{display:block;font-size:24px;margin-top:4px}.chat{overflow:hidden;display:flex;flex-direction:column;min-height:520px}.chat-head{padding:17px 19px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:12px}.chat-head h3{margin:0;font-size:16px}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{background:#202034;border:1px solid var(--line);border-radius:9px;padding:6px 9px;color:var(--muted);font-size:11px;cursor:pointer}.filter.active{background:#3b255c;border-color:#8c56d4;color:white}.messages{padding:14px 18px;flex:1;max-height:440px;overflow:auto}.msg{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid #ffffff0b}.msg:last-child{border:0}.mini{width:29px;height:29px;flex:0 0 29px;border-radius:10px;display:grid;place-items:center;font-size:10px;font-weight:900}.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.meta strong{font-size:13px}.tag{font-size:9px;font-weight:900;padding:2px 6px;border-radius:5px}.tag.twitch{background:#6942ad;color:#eee}.tag.kick{background:#1e704f;color:#c4ffe4}.tag.youtube{background:#852d39;color:#ffe0e4}.tag.tiktok{background:#333;color:#fff}.msg p{margin:4px 0 0;color:#d8d7e7;font-size:13px;overflow-wrap:anywhere}.composer{border-top:1px solid var(--line);padding:14px;display:flex;gap:9px}.composer input{min-width:0;flex:1;background:#0c0c16;border:1px solid var(--line);border-radius:11px;padding:12px;color:white;outline:none}.composer input:focus{border-color:var(--purple)}.right{padding:18px}.right h3{margin:0 0 5px}.right .sub{color:var(--muted);font-size:12px;margin:0 0 18px}.connect-item{padding:13px 0;border-bottom:1px solid var(--line)}.connect-item:last-child{border:0}.connect-item strong{font-size:13px}.connect-item p{font-size:11px;color:var(--muted);margin:4px 0 9px}.connect-item button{font-size:11px;padding:7px 10px}.note{margin-top:18px;padding:13px;border:1px solid #5d4a2c;background:#2a2117;border-radius:12px;color:#e9d4a8;font-size:11px}.footer{text-align:center;color:#77768e;font-size:11px;margin:18px 0 3px}
+@media(max-width:1050px){.layout{grid-template-columns:240px minmax(0,1fr)}.right{grid-column:1/-1}.right-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}}
+@media(max-width:700px){.app{padding:14px}.top{align-items:flex-start;flex-direction:column}.top-right{width:100%;justify-content:space-between}.layout{grid-template-columns:1fr}.side{order:2}.main{order:1}.right{order:3;grid-column:auto}.stats{gap:8px}.stat{padding:13px}.stat strong{font-size:20px}.welcome{align-items:flex-start;flex-direction:column}.chat{min-height:480px}.chat-head{align-items:flex-start;flex-direction:column}.right-grid{display:block}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top">
+ <div class="brand"><div class="logo">Y</div><div><h1>Yefie Live</h1><p>Your all-in-one streaming control room</p></div></div>
+ <div class="top-right"><span class="pill demo">● DEMO PREVIEW — not connected to live platforms</span><span class="pill">Dashboard</span></div>
+</header>
+<div class="layout">
+ <aside class="card side">
+  <div class="profile"><div class="avatar">YF</div><div><strong>Yefie</strong><small>Streamer dashboard</small></div></div>
+  <div class="section-label">Your channels</div>
+  <div class="platform"><div class="platform-left"><div class="picon tw">T</div><div><b>Twitch</b><small>twitch.tv/yefie33</small></div></div><span class="status">Not connected</span></div>
+  <div class="platform"><div class="platform-left"><div class="picon ki">K</div><div><b>Kick</b><small>kick.com/yefie</small></div></div><span class="status">Not connected</span></div>
+  <div class="platform"><div class="platform-left"><div class="picon yt">▶</div><div><b>YouTube</b><small>Yeferson Marroquin</small></div></div><span class="status">Not connected</span></div>
+  <div class="platform"><div class="platform-left"><div class="picon tt">♪</div><div><b>TikTok Live</b><small>Username not added</small></div></div><span class="status">Not connected</span></div>
+  <button class="btn full" onclick="document.getElementById('connections').scrollIntoView({behavior:'smooth'})">Set up connections ↓</button>
+ </aside>
+ <main class="main">
+  <section class="card welcome"><div><div class="live-indicator"><span class="dot"></span> STREAMER CONTROL ROOM</div><h2>Welcome back, Yefie 👋</h2><p>One place to keep an eye on every community.</p></div><button class="btn primary" onclick="alert('Live platform sign-in will be added when the official integrations are configured.')">Connect platforms</button></section>
+  <section class="stats">
+   <div class="card stat"><span>Platforms listed</span><strong>4</strong></div>
+   <div class="card stat"><span>Live connections</span><strong id="liveCount">0 / 4</strong></div>
+   <div class="card stat"><span>Messages in preview</span><strong id="msgCount">5</strong></div>
+  </section>
+  <section class="card chat">
+   <div class="chat-head"><h3>Combined live chat</h3><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="twitch">Twitch</button><button class="filter" data-filter="kick">Kick</button><button class="filter" data-filter="youtube">YouTube</button><button class="filter" data-filter="tiktok">TikTok</button></div></div>
+   <div class="messages" id="messages">
+    <div class="msg" data-platform="twitch"><div class="mini tw">T</div><div><div class="meta"><strong>GamerAlex</strong><span class="tag twitch">TWITCH</span></div><p>Yefie let's gooo 🔥</p></div></div>
+    <div class="msg" data-platform="kick"><div class="mini ki">K</div><div><div class="meta"><strong>its_manny</strong><span class="tag kick">KICK</span></div><p>What's up chat! 💚</p></div></div>
+    <div class="msg" data-platform="youtube"><div class="mini yt">▶</div><div><div class="meta"><strong>MariaG</strong><span class="tag youtube">YOUTUBE</span></div><p>Watching from the phone!</p></div></div>
+    <div class="msg" data-platform="tiktok"><div class="mini tt">♪</div><div><div class="meta"><strong>liveviewer22</strong><span class="tag tiktok">TIKTOK</span></div><p>W stream ❤️</p></div></div>
+    <div class="msg" data-platform="twitch"><div class="mini tw">T</div><div><div class="meta"><strong>NightOwl</strong><span class="tag twitch">TWITCH</span></div><p>What game are we playing today?</p></div></div>
+   </div>
+   <form class="composer" id="sendForm"><input id="chatInput" placeholder="Send a demo message to this preview…" autocomplete="off"><button class="btn primary">Send</button></form>
+  </section>
+ </main>
+ <aside class="card right" id="connections">
+  <h3>Connect your platforms</h3><p class="sub">Your accounts need secure, official authorization before real messages can appear here.</p>
+  <div class="right-grid">
+   <div class="connect-item"><strong>Twitch · yefie33</strong><p>Connect with Twitch sign-in and the platform's chat API.</p><button class="btn" onclick="alert('Twitch OAuth/API setup is required before this can connect.')">Set up Twitch</button></div>
+   <div class="connect-item"><strong>Kick · yefie</strong><p>Requires supported Kick chat access and account authorization.</p><button class="btn" onclick="alert('Kick integration setup is required before this can connect.')">Set up Kick</button></div>
+   <div class="connect-item"><strong>YouTube · Yeferson Marroquin</strong><p>Requires Google authorization and an active live chat ID.</p><button class="btn" onclick="alert('YouTube API and Google OAuth setup is required before this can connect.')">Set up YouTube</button></div>
+   <div class="connect-item"><strong>TikTok Live</strong><p>Add your TikTok username and confirm an approved live-chat integration.</p><button class="btn" onclick="alert('Add your TikTok username to configure this platform.')">Add TikTok</button></div>
+  </div>
+  <div class="note"><b>Important:</b> This is a working visual prototype. The sample chat is not real viewer activity. Real multi-platform chat needs API/OAuth setup and a secure server; never enter platform passwords into this page.</div>
+ </aside>
+</div>
+<div class="footer">Yefie Live · Community first · Built for Twitch, Kick, YouTube & TikTok</div>
+</div>
+<script>
+const filters=document.querySelectorAll('.filter');
+filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.msg').forEach(m=>m.style.display=(f==='all'||m.dataset.platform===f)?'flex':'none')}));
+document.getElementById('sendForm').addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('chatInput');const value=input.value.trim();if(!value)return;const row=document.createElement('div');row.className='msg';row.dataset.platform='preview';row.innerHTML='<div class="mini" style="background:#55377f">Y</div><div><div class="meta"><strong>You (preview)</strong><span class="tag" style="background:#49315f;color:#eadcff">LOCAL PREVIEW</span></div></div>';const p=document.createElement('p');p.textContent=value;row.children[1].appendChild(p);document.getElementById('messages').appendChild(row);document.getElementById('messages').scrollTop=999999;document.getElementById('msgCount').textContent=document.querySelectorAll('.msg').length;input.value='';});
+</script>
+</body></html>
